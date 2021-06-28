@@ -10,7 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "potato" > potato.md
-
+      - name: configure git
+        run: |
+          git config user.name 'pepegar'
+          git config user.email 'pepegar@users.noreply.github.com'
       - name: Create Pull Request
         if: env.NO_CHANGES == null
         id: cpr
